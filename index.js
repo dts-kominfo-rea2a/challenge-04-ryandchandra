@@ -8,14 +8,14 @@ const dates = [
 ];
 
 // TODO: Buatlah fungsi createDate
-const createDate = (dates, position = null) => {
-  // sort dates
+const createDate = (dates, position = -1) => {
+  // map into epoch seconds
   const timestamps = [];
   for (let i = 0; i < dates.length; i++){
     timestamps.push(new Date(dates[i]).getTime()/1000);
   }
   
-  if (!position){
+  if (position === -1){ // default when position is not given
     return timestamps.sort().join("-");
   } else {
     return timestamps[position];
