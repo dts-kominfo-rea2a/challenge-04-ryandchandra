@@ -12,7 +12,7 @@ const createDate = (dates, position = -1) => {
   // map into epoch seconds
   const timestamps = [];
   for (let i = 0; i < dates.length; i++){
-    timestamps.push(new Date(dates[i]).getTime()/1000);
+    timestamps.push((new Date(dates[i]).getTime()/1000).toString());
   }
   
   if (position === -1){ // default when position is not given
